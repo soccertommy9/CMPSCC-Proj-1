@@ -1,0 +1,39 @@
+//trb5476_Project_1
+
+    #include <iostream>
+    using namespace std;
+    
+    int main()
+{
+  //variables: gravity, angle,initial velocity, distance, height, time, velocity in x, velocity in y, final velocity in y, FINAL VELOCITY
+  const double g=-9.8;
+   double angi;
+   double Vi;
+   double x;
+   double hi;
+   double t;
+   double vx;
+   double vy;
+   double vfy;
+   double Vf;
+   //set velocity, angle, distance, height
+   cout << "Enter the Velocity in m/s: ";
+   cin >> Vi;
+   cout << "Enter the angle in degrees(0-360°) : ";
+   cin >> angi;
+   cout << "Enter the distance to tower in meters: ";
+   cin >> x;
+   cout << "Enter the height of tower in meters: ";
+   cin >> hi;
+   //Solution for time
+   vx=(Vi)*cos(angi);
+   t=(x)/(vx);
+   //solution for final velocity
+   vy=(Vi)*sin(angi);
+   vfy=vy+g*t;
+   Vf=sqrt(vfy*vfy+vx*vx);
+   //display time and final velocity
+   cout<< "Bird will hit tower in (s): "<<t<<
+   cout<< "Final Velocity of the Bird Will be: "<<Vf<<endl;
+    return 0;
+}
